@@ -1,6 +1,6 @@
 //#region node_modules/.nitro/vite/services/ssr/assets/hero-BZ5dFgXN.js
 var SITE_NAME = "Sottosale Fishbar";
-var SITE_URL_WITH_SLASH = `https://sottosalefishbar.lovable.app/`;
+var SITE_URL_WITH_SLASH = `https://sottosalefishbar.it/`;
 var SITE_TITLE = "Sottosale Fishbar Roseto degli Abruzzi | Pesce, pranzo e aperitivo";
 var SITE_DESCRIPTION = "Sottosale Fishbar sul lungomare di Roseto degli Abruzzi: cucina di mare, pranzo dalle 12:00 alle 14:30, aperitivo dalle 18:00, cocktail e vini.";
 var OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/mOCpVrrFHmalB4a4E0zoRZWULWG3/social-images/social-1784895245998-Opera_Instantané_2026-07-24_131348_preview--sottosalefishbar.lovable.app.webp";

@@ -1,9 +1,9 @@
 export const SITE_NAME = "Sottosale Fishbar";
-export const SITE_URL = "https://sottosalefishbar.lovable.app";
+export const SITE_URL = "https://sottosalefishbar.it";
 export const SITE_URL_WITH_SLASH = `${SITE_URL}/`;
 export const SITE_TITLE = "Sottosale Fishbar Roseto degli Abruzzi | Pesce, pranzo e aperitivo";
 export const SITE_DESCRIPTION = "Sottosale Fishbar sul lungomare di Roseto degli Abruzzi: cucina di mare, pranzo dalle 12:00 alle 14:30, aperitivo dalle 18:00, cocktail e vini.";
-export const OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/mOCpVrrFHmalB4a4E0zoRZWULWG3/social-images/social-1784895245998-Opera_Instantané_2026-07-24_131348_preview--sottosalefishbar.lovable.app.webp";
+export const OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/mOCpVrrFHmalB4a4E0zoRZWULWG3/social-images/social-1784895245998-Opera_Instantané_2026-07-24_131348_preview--sottosalefishbar.it.webp";
 export const SITE_PHONE = "+393316250601";
 export const SITE_PHONE_DISPLAY = "+39 331 625 0601";
 export const SITE_ADDRESS = "Lungomare Trento, 64026 Roseto degli Abruzzi (TE)";
