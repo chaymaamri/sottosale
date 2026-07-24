@@ -13,7 +13,6 @@ import dishCheesecake from "@/assets/dish-cheesecake.jpg";
 import { menu, reviews, type Lang, type L10n } from "@/lib/menu-data";
 import {
   BREADCRUMB_SCHEMA,
-  FAQ_ITEMS,
   FAQ_SCHEMA,
   LOCAL_BUSINESS_SCHEMA,
   OG_IMAGE,
@@ -43,6 +42,14 @@ type ServiceStatusCopy = {
   active: string;
   upcoming: string;
   ended: string;
+};
+
+type FaqCopy = {
+  title: string;
+  heading: string;
+  intro: string;
+  ctas: { menu: string; about: string; visit: string };
+  items: { question: string; answer: string }[];
 };
 
 const ALLERGEN_LABELS: Record<Lang, Record<string, string>> = {
@@ -266,6 +273,74 @@ const MENU_COPY: Record<Lang, MenuSectionCopy> = {
   },
 };
 
+const FAQ_COPY: Record<Lang, FaqCopy> = {
+  it: {
+    title: "Domande frequenti",
+    heading: "Tutto quello che serve per prenotare, mangiare e arrivare senza dubbi.",
+    intro: "Qui trovi risposte rapide su orari, prenotazioni, allergeni e come raggiungerci sul lungomare di Roseto degli Abruzzi.",
+    ctas: { menu: "Vai al menu", about: "Orari e servizio", visit: "Come arrivare" },
+    items: [
+      { question: "A che ora servite il pranzo e l'aperitivo?", answer: "Il pranzo è disponibile dalle 12:00 alle 14:30. L'aperitivo parte dalle 18:00 e continua fino a chiusura." },
+      { question: "Devo prenotare un tavolo?", answer: "La prenotazione è fortemente consigliata, soprattutto per il tramonto, i weekend e i tavoli più richiesti vista mare." },
+      { question: "Gestite allergeni e intolleranze?", answer: "Sì. Trovi la lista completa degli allergeni nella pagina e ti consigliamo di comunicare sempre eventuali esigenze alimentari al personale." },
+      { question: "Cosa posso ordinare all'aperitivo?", answer: "Puoi scegliere piatti di mare, fritti, assaggi dello chef, cocktail, gin e una selezione di vini. Scopri il menu completo nella sezione Menu." },
+      { question: "Dove si trova Sottosale Fishbar?", answer: "Ci trovi sul lungomare di Roseto degli Abruzzi, in Lungomare Trento. Usa la mappa o apri le indicazioni per raggiungerci velocemente." },
+    ],
+  },
+  en: {
+    title: "Frequently asked questions",
+    heading: "Everything you need to book, eat and find us without uncertainty.",
+    intro: "Quick answers about our hours, reservations, allergens and how to find us on the Roseto degli Abruzzi promenade.",
+    ctas: { menu: "Go to menu", about: "Hours & service", visit: "How to get here" },
+    items: [
+      { question: "What time do you serve lunch and aperitivo?", answer: "Lunch is served from 12:00 PM to 2:30 PM. Aperitivo starts at 6:00 PM and continues until closing." },
+      { question: "Do I need to book a table?", answer: "Booking is strongly recommended, especially for sunset, weekends, and the most requested sea-view tables." },
+      { question: "Do you handle allergens and intolerances?", answer: "Yes. You can find the full allergen list on the page and we recommend always telling the staff about any dietary needs." },
+      { question: "What can I order during aperitivo?", answer: "You can choose seafood dishes, fried items, chef's picks, cocktails, gin and a selection of wines. See the full menu in the Menu section." },
+      { question: "Where is Sottosale Fishbar located?", answer: "We are on the promenade in Roseto degli Abruzzi, on Lungomare Trento. Use the map or open directions to reach us quickly." },
+    ],
+  },
+  es: {
+    title: "Preguntas frecuentes",
+    heading: "Todo lo necesario para reservar, comer y llegar sin dudas.",
+    intro: "Respuestas rápidas sobre horarios, reservas, alérgenos y cómo encontrarnos en el paseo marítimo de Roseto degli Abruzzi.",
+    ctas: { menu: "Ir a la carta", about: "Horario y servicio", visit: "Cómo llegar" },
+    items: [
+      { question: "¿A qué hora sirven el almuerzo y el aperitivo?", answer: "El almuerzo está disponible de 12:00 a 14:30. El aperitivo empieza a las 18:00 y continúa hasta el cierre." },
+      { question: "¿Necesito reservar mesa?", answer: "La reserva es muy recomendable, sobre todo para el atardecer, los fines de semana y las mesas con vistas al mar más solicitadas." },
+      { question: "¿Gestionan alérgenos e intolerancias?", answer: "Sí. Encontrarás la lista completa de alérgenos en la página y te recomendamos avisar siempre al personal de cualquier necesidad alimentaria." },
+      { question: "¿Qué puedo pedir durante el aperitivo?", answer: "Puedes elegir platos de mar, fritos, selecciones del chef, cócteles, ginebra y una selección de vinos. Consulta la carta completa en la sección Carta." },
+      { question: "¿Dónde está Sottosale Fishbar?", answer: "Nos encuentras en el paseo marítimo de Roseto degli Abruzzi, en Lungomare Trento. Usa el mapa o abre las indicaciones para llegar rápidamente." },
+    ],
+  },
+  fr: {
+    title: "Questions fréquentes",
+    heading: "Tout ce qu'il faut pour réserver, manger et nous trouver sans doute.",
+    intro: "Réponses rapides sur nos horaires, les réservations, les allergènes et la manière de nous trouver sur le front de mer de Roseto degli Abruzzi.",
+    ctas: { menu: "Aller à la carte", about: "Horaires et service", visit: "Comment venir" },
+    items: [
+      { question: "À quelle heure servez-vous le déjeuner et l'apéritif ?", answer: "Le déjeuner est servi de 12 h 00 à 14 h 30. L'apéritif commence à 18 h 00 et se poursuit jusqu'à la fermeture." },
+      { question: "Dois-je réserver une table ?", answer: "La réservation est fortement conseillée, surtout pour le coucher du soleil, les week-ends et les tables avec vue mer les plus demandées." },
+      { question: "Gérez-vous les allergènes et les intolérances ?", answer: "Oui. Vous trouverez la liste complète des allergènes sur la page et nous vous recommandons d'informer systématiquement le personnel de vos besoins alimentaires." },
+      { question: "Que puis-je commander à l'apéritif ?", answer: "Vous pouvez choisir des plats de la mer, des fritures, les suggestions du chef, des cocktails, du gin et une sélection de vins. Découvrez toute la carte dans la section Carte." },
+      { question: "Où se trouve Sottosale Fishbar ?", answer: "Nous sommes sur le front de mer de Roseto degli Abruzzi, à Lungomare Trento. Utilisez la carte ou ouvrez l'itinéraire pour nous rejoindre rapidement." },
+    ],
+  },
+  de: {
+    title: "Häufige Fragen",
+    heading: "Alles, was Sie brauchen, um ohne Zweifel zu reservieren, zu essen und uns zu finden.",
+    intro: "Schnelle Antworten zu unseren Öffnungszeiten, Reservierungen, Allergenen und wie Sie uns an der Promenade von Roseto degli Abruzzi finden.",
+    ctas: { menu: "Zur Karte", about: "Zeiten & Service", visit: "Anfahrt" },
+    items: [
+      { question: "Wann serviert ihr Mittagessen und Aperitivo?", answer: "Mittagessen gibt es von 12:00 bis 14:30 Uhr. Aperitivo beginnt um 18:00 Uhr und läuft bis zur Schließung." },
+      { question: "Muss ich einen Tisch reservieren?", answer: "Eine Reservierung ist sehr empfehlenswert, vor allem zum Sonnenuntergang, am Wochenende und für besonders gefragte Tische mit Meerblick." },
+      { question: "Geht ihr auf Allergene und Unverträglichkeiten ein?", answer: "Ja. Die vollständige Allergenenliste findest du auf der Seite und wir empfehlen, das Personal immer über Ernährungsbedürfnisse zu informieren." },
+      { question: "Was kann ich beim Aperitivo bestellen?", answer: "Du kannst Meeresgerichte, Frittiertes, Chef-Auswahl, Cocktails, Gin und eine Auswahl an Weinen wählen. Die komplette Karte findest du im Bereich Karte." },
+      { question: "Wo befindet sich Sottosale Fishbar?", answer: "Du findest uns an der Promenade von Roseto degli Abruzzi, am Lungomare Trento. Nutze die Karte oder die Wegbeschreibung, um uns schnell zu erreichen." },
+    ],
+  },
+};
+
 const SERVICE_WINDOWS: Record<ServiceKey, { start: number; end?: number }> = {
   lunch: { start: 12 * 60, end: 14 * 60 + 30 },
   aperitivo: { start: 18 * 60 },
@@ -477,6 +552,7 @@ export const Route = createFileRoute("/")({
 
 const t: Record<Lang, {
   nav: { menu: string; about: string; reviews: string; visit: string };
+  homeLabel: string;
   ctaCall: string;
   ctaBook: string;
   heroKicker: string;
@@ -509,6 +585,7 @@ const t: Record<Lang, {
 }> = {
   it: {
     nav: { menu: "Menu", about: "Il posto", reviews: "Recensioni", visit: "Vieni a trovarci" },
+    homeLabel: "Home",
     ctaCall: "Chiama ora",
     ctaBook: "Prenota un tavolo",
     heroKicker: "Chiringuito · Lungomare Trento · Roseto degli Abruzzi",
@@ -545,6 +622,7 @@ const t: Record<Lang, {
   },
   en: {
     nav: { menu: "Menu", about: "The place", reviews: "Reviews", visit: "Find us" },
+    homeLabel: "Home",
     ctaCall: "Call now",
     ctaBook: "Book a table",
     heroKicker: "Beach bar · Lungomare Trento · Roseto degli Abruzzi",
@@ -581,6 +659,7 @@ const t: Record<Lang, {
   },
   es: {
     nav: { menu: "Carta", about: "El lugar", reviews: "Reseñas", visit: "Encuéntranos" },
+    homeLabel: "Inicio",
     ctaCall: "Llamar ahora",
     ctaBook: "Reservar mesa",
     heroKicker: "Chiringuito · Lungomare Trento · Roseto degli Abruzzi",
@@ -617,6 +696,7 @@ const t: Record<Lang, {
   },
   fr: {
     nav: { menu: "Carte", about: "Le lieu", reviews: "Avis", visit: "Nous trouver" },
+    homeLabel: "Accueil",
     ctaCall: "Appeler",
     ctaBook: "Réserver",
     heroKicker: "Bar de plage · Lungomare Trento · Roseto degli Abruzzi",
@@ -653,6 +733,7 @@ const t: Record<Lang, {
   },
   de: {
     nav: { menu: "Karte", about: "Der Ort", reviews: "Bewertungen", visit: "Finden Sie uns" },
+    homeLabel: "Startseite",
     ctaCall: "Jetzt anrufen",
     ctaBook: "Tisch reservieren",
     heroKicker: "Strandbar · Lungomare Trento · Roseto degli Abruzzi",
@@ -767,15 +848,6 @@ function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
           <div className="max-w-2xl animate-float-up text-white">
-            <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/70">
-              <a href="#top" className="hover:text-white transition-colors">Home</a>
-              <span aria-hidden="true" className="text-white/35">/</span>
-              <a href="#about" className="hover:text-white transition-colors">Il posto</a>
-              <span aria-hidden="true" className="text-white/35">/</span>
-              <a href="#menu" className="hover:text-white transition-colors">Menu</a>
-              <span aria-hidden="true" className="text-white/35">/</span>
-              <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
-            </nav>
             <p className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-white/80">
               {c.heroKicker}
             </p>
@@ -1024,30 +1096,30 @@ function Home() {
       <section id="faq" className="border-y border-border bg-muted/25 py-24 md:py-32">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.28em] text-coral">Domande frequenti</p>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-coral">{FAQ_COPY[lang].title}</p>
             <h2 className="mt-4 font-display text-4xl md:text-6xl leading-[1.05] text-balance">
-              Tutto quello che serve per prenotare, mangiare e arrivare senza dubbi.
+              {FAQ_COPY[lang].heading}
             </h2>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground text-balance">
-              Questa sezione aiuta chi cerca un pranzo di mare, un aperitivo al tramonto o informazioni rapide su orari e allergeni.
+              {FAQ_COPY[lang].intro}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#menu" className="inline-flex items-center rounded-full border border-foreground/20 px-4 py-2 text-sm font-medium hover:bg-background transition-colors">
-                Vai al menu
+                {FAQ_COPY[lang].ctas.menu}
               </a>
               <a href="#about" className="inline-flex items-center rounded-full border border-foreground/20 px-4 py-2 text-sm font-medium hover:bg-background transition-colors">
-                Orari e servizio
+                {FAQ_COPY[lang].ctas.about}
               </a>
               <a href="#visit" className="inline-flex items-center rounded-full border border-foreground/20 px-4 py-2 text-sm font-medium hover:bg-background transition-colors">
-                Come arrivare
+                {FAQ_COPY[lang].ctas.visit}
               </a>
             </div>
           </div>
 
           <div className="rounded-lg border border-border bg-background p-4 shadow-sm">
             <Accordion type="single" collapsible className="w-full">
-              {FAQ_ITEMS.map((item, index) => (
+              {FAQ_COPY[lang].items.map((item, index) => (
                 <AccordionItem key={item.question} value={`faq-${index}`}>
                   <AccordionTrigger>{item.question}</AccordionTrigger>
                   <AccordionContent>

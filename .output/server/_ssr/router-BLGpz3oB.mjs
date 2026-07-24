@@ -1,30 +1,137 @@
-import { n as __toESM } from "../_runtime.mjs";
-import { a as LOCAL_BUSINESS_SCHEMA, c as SITE_NAME, d as buildJsonLdScript, f as hero_default, i as FONT_STYLESHEET_HREF, l as SITE_TITLE, o as OG_IMAGE, r as FAQ_SCHEMA, s as SITE_DESCRIPTION, t as BREADCRUMB_SCHEMA, u as SITE_URL_WITH_SLASH } from "./hero-BZ5dFgXN.mjs";
-import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { t as hero_default } from "./hero-PZ8xUrEt.mjs";
+import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-C4eUVIFU.js
-var import_react = /* @__PURE__ */ __toESM(require_react());
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BLGpz3oB.js
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-CFJOZt37.css";
-function reportLovableError(error, context = {}) {
-	if (typeof window === "undefined") return;
-	window.__lovableEvents?.captureException?.(error, {
-		source: "react_error_boundary",
-		route: window.location.pathname,
-		...context
+var SITE_NAME = "Sottosale Fishbar";
+var SITE_URL_WITH_SLASH = `https://sottosale.it/`;
+var SITE_TITLE = "Sottosale Fishbar Roseto degli Abruzzi | Pesce, pranzo e aperitivo";
+var SITE_DESCRIPTION = "Sottosale Fishbar sul lungomare di Roseto degli Abruzzi: cucina di mare, pranzo dalle 12:00 alle 14:30, aperitivo dalle 18:00, cocktail e vini.";
+var OG_IMAGE = "https://sottosale.it/og-image.jpg";
+var SITE_PHONE = "+393316250601";
+var SITE_INSTAGRAM = "https://www.instagram.com/sottosale_roseto/";
+var SITE_FACEBOOK = "https://www.facebook.com/sottosaleroseto/?ref=PROFILE_EDIT_xav_ig_profile_page_web#";
+var FONT_STYLESHEET_HREF = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap";
+var BREADCRUMB_ITEMS = [
+	{
+		label: "Home",
+		href: SITE_URL_WITH_SLASH
+	},
+	{
+		label: "Il posto",
+		href: `${SITE_URL_WITH_SLASH}#about`
+	},
+	{
+		label: "Menu",
+		href: `${SITE_URL_WITH_SLASH}#menu`
+	},
+	{
+		label: "FAQ",
+		href: `${SITE_URL_WITH_SLASH}#faq`
+	}
+];
+var FAQ_ITEMS = [
+	{
+		question: "A che ora servite il pranzo e l'aperitivo?",
+		answer: "Il pranzo e' disponibile dalle 12:00 alle 14:30. L'aperitivo parte dalle 18:00 e continua fino a chiusura."
+	},
+	{
+		question: "Devo prenotare un tavolo?",
+		answer: "La prenotazione e' fortemente consigliata, soprattutto per il tramonto, i weekend e i tavoli piu richiesti vista mare."
+	},
+	{
+		question: "Gestite allergeni e intolleranze?",
+		answer: "Sì. Trovi la lista completa degli allergeni nella pagina e ti consigliamo di comunicare sempre eventuali esigenze alimentari al personale."
+	},
+	{
+		question: "Cosa posso ordinare all'aperitivo?",
+		answer: "Puoi scegliere piatti di mare, fritti, assaggi dello chef, cocktail, gin e una selezione di vini. Scopri il menu completo nella sezione Menu."
+	},
+	{
+		question: "Dove si trova Sottosale Fishbar?",
+		answer: "Ci trovi sul lungomare di Roseto degli Abruzzi, in Lungomare Trento. Usa la mappa o apri le indicazioni per raggiungerci velocemente."
+	}
+];
+var DAYS_OF_WEEK = [
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday",
+	"Sunday"
+];
+var LOCAL_BUSINESS_SCHEMA = {
+	"@context": "https://schema.org",
+	"@type": "Restaurant",
+	name: SITE_NAME,
+	url: SITE_URL_WITH_SLASH,
+	description: SITE_DESCRIPTION,
+	image: OG_IMAGE,
+	telephone: SITE_PHONE,
+	priceRange: "EUR 10-30",
+	servesCuisine: [
+		"Seafood",
+		"Italian",
+		"Cocktail bar"
+	],
+	acceptsReservations: true,
+	menu: `${SITE_URL_WITH_SLASH}#menu`,
+	areaServed: {
+		"@type": "City",
+		name: "Roseto degli Abruzzi"
+	},
+	address: {
+		"@type": "PostalAddress",
+		streetAddress: "Lungomare Trento",
+		addressLocality: "Roseto degli Abruzzi",
+		addressRegion: "TE",
+		postalCode: "64026",
+		addressCountry: "IT"
+	},
+	openingHoursSpecification: [{
+		"@type": "OpeningHoursSpecification",
+		dayOfWeek: DAYS_OF_WEEK,
+		opens: "12:00",
+		closes: "14:30"
 	}, {
-		mechanism: "react_error_boundary",
-		handled: false,
-		severity: "error"
-	});
-	const message = error instanceof Response ? `Response ${error.status}${error.url ? ` at ${error.url}` : ""}` : error instanceof Error ? error.message : String(error);
-	window.__lovableReportRuntimeError?.({
-		message,
-		stack: error instanceof Error ? error.stack : void 0,
-		filename: window.location.pathname
-	});
+		"@type": "OpeningHoursSpecification",
+		dayOfWeek: DAYS_OF_WEEK,
+		opens: "18:00",
+		closes: "02:00"
+	}],
+	sameAs: [SITE_INSTAGRAM, SITE_FACEBOOK]
+};
+var BREADCRUMB_SCHEMA = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: BREADCRUMB_ITEMS.map((item, index) => ({
+		"@type": "ListItem",
+		position: index + 1,
+		name: item.label,
+		item: item.href
+	}))
+};
+var FAQ_SCHEMA = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: FAQ_ITEMS.map((item) => ({
+		"@type": "Question",
+		name: item.question,
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: item.answer
+		}
+	}))
+};
+function buildJsonLdScript(data) {
+	return {
+		type: "application/ld+json",
+		children: JSON.stringify(data)
+	};
 }
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -59,9 +166,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }) {
 	console.error(error);
 	const router = useRouter();
-	(0, import_react.useEffect)(() => {
-		reportLovableError(error, { boundary: "tanstack_root_error_component" });
-	}, [error]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -198,7 +302,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-CzVHap2J.mjs");
+var $$splitComponentImporter = () => import("./routes-CPlGisNW.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({
 		meta: [

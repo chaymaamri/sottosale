@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sottosalefishbar.it/sitemap.xml
+Sitemap: https://sottosale.it/sitemap.xml
